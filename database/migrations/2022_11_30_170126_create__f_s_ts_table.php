@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('i_s_c_a_e_s', function (Blueprint $table) {
+        Schema::create('_f_s_ts', function (Blueprint $table) {
             $table->id();
             $table->string('N°_inscription',10);
             $table->string('NNI');
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('i_s_c_a_e_s');
+        Schema::dropIfExists('_f_s_ts');
     }
 };

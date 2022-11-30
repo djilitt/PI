@@ -4,11 +4,11 @@
           
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tables</h1>
-                        <ol class="breadcrumb mb-4">
+                        <h1 class="mt-4">Import</h1>
+                        {{-- <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{route('index')}}">Accueil</a></li>
-                            <li class="breadcrumb-item active">Tables</li>
-                        </ol>
+                            <li class="breadcrumb-item active">Import</li>
+                        </ol> --}}
                         
                         <div class="row">
                         <form action="{{ route('ESP.import') }}" method="POST" enctype="multipart/form-data">
@@ -18,7 +18,6 @@
                             <br>
                             
                             <button class="btn btn-primary" type="submit">Importer les Etudiants</button>
-                            <a class="btn btn-danger float-end" href="{{ route('ESP.export') }}">Exporter les Etudiants</a>
 <select class="p-2 text-light bg-success " name="annee" id="annee" required> 
     <option value="" selected disabled>Specifie l'annee scolaire</option>
     <option value="2020-2021">2020-2021</option>

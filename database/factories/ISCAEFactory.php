@@ -37,6 +37,8 @@ class ISCAEFactory extends Factory
            'etablissement_de_provenance'=>'',
             'NATIONALITE'=>'MAURITANIE',
             'LANGUE_DE_FORMATION'=>$this->faker->randomElement(['francais','francais','francais','arab']),
+            'annee_scolaire'=>'2020-2021'
+
         ];
     
 }

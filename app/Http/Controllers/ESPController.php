@@ -30,11 +30,14 @@ class ESPController extends Controller
 
         $data = [
         [ 'package' => request()->get('etat')], 
-         ['etats'=>$etats]
+         ['etats'=>$etats],
+        
+
      ]; 
      
+    
         $dataa= Excel::download(new Export($data), 'ESPs.xlsx');
-        return redirect('/tables')->with(['etat'=>$data[0]]);
+        return $dataa;
     }
 
     /**

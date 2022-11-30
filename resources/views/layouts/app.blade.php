@@ -8,10 +8,10 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="{{ asset('cdn/PI_workspace.css')}}" rel="stylesheet" />
         <link href="{{ asset('css/styles.css')}}" rel="stylesheet" />
         <link href="{{ asset('bootstrap.min.css')}}" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="{{ asset('cdn/all.js')}}" crossorigin="anonymous"></script>
         {{-- <script src="{{ asset('bootstrap.min.js')}}"></script>
         <script src="{{ asset('jquery-3.2.1.slim.min.js')}}"></script>
         <script src="{{ asset('popper.min.js')}}"></script> --}}
@@ -20,7 +20,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 font-weight-bold" href="{{route('index')}}">DPEEC</a>
+            <a class="navbar-brand ps-3 font-weight-bold" href="{{route('index')}}">DPSE</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -51,65 +51,36 @@
                             <div class="sb-sidenav-menu-heading">catagorie</div>
                             <a class="nav-link" href="{{ route('etudiants') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                etudiants
+                                Etudiants
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
+                                Export
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('layout-static') }}">Static Navigation</a>
-                                    <a class="nav-link" href="{{ route('layout-sidenav-light') }}">Light Sidenav</a>
+                                    <a class="nav-link" href="{{ route('layout-sidenav-light') }}">etudiant</a>
                                 </nav>
                             </div>
+                           
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                                Import
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Login</a>
-                                            <a class="nav-link" href="#">Register</a>
-                                            <a class="nav-link" href="#">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">401 Page</a>
-                                            <a class="nav-link" href="#">404 Page</a>
-                                            <a class="nav-link" href="#">500 Page</a>
-                                        </nav>
-                                    </div>
+                                    <a class="nav-link" href="{{ route('tables') }}">etudiant</a>
+                                    
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="{{ route('charts') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="{{ route('tables') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>
+                         
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        DPEEC
+                      
+                        DPSE
                     </div>
                 </nav>
             </div>
@@ -132,13 +103,13 @@
                 </footer>
             </div>
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{{ asset('cdn/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
         <script src="{{ asset('js/scripts.js')}}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="{{ asset('cdn/Chart.min.js')}}" crossorigin="anonymous"></script>
          <script src="{{asset('assets/demo/chart-area-demo.js')}}"></script> 
          <script src="{{asset('assets/demo/chart-bar-demo.js')}}"></script> 
          <script src="{{asset('assets/demo/chart-pie-demo.js')}}"></script> 
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="{{ asset('cdn/simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
         <script src="{{ asset('js/datatables-simple-demo.js')}}"></script>
     
     
