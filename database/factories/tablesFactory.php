@@ -17,11 +17,12 @@ class tablesFactory extends Factory
     public function definition()
     {
         return [
-           'abrev' => 'ISN',
-           'nom'=> 'Institue Superieur De Numerique',
-           'tutle'=> 'Minister education superieur ',
-           'co-tutle' => 'Minister numerisation ',
-           'nom-basedonne'=>'_i_s_ns'
+           'abrev' => 'FST',
+           'nom'=> 'Faculite de Science et Technique',
+           'tutle'=> 'Minister education superieur',
+           'co-tutle' => '',
+           'nom-basedonne'=>'i_s_c_a_e_s',
+           'privee'=>1
         ];
     }
 }
