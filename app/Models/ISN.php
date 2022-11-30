@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ISN extends Model
 {
     use HasFactory;
+    protected $fillable=[];
 }

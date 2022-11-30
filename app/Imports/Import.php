@@ -14,7 +14,7 @@ class Import implements WithHeadingRow,ToCollection
 
 
 
-    private $data; 
+    private $data;
 
     public function __construct(array $data = [])
     {
@@ -60,7 +60,7 @@ class Import implements WithHeadingRow,ToCollection
         }
 
  return $arr;
-        
+
     }
 
 }

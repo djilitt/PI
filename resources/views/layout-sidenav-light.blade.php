@@ -2,8 +2,8 @@
 
 @section('content')
             <style>
-                 .model{ 
-                    border-color:#2b6ec4; 
+                 .model{
+                    border-color:#2b6ec4;
  display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -20,9 +20,9 @@
   font-size: 1.4em ;
                  }
             </style>
-            
+
                 <main>
-                    
+
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Export</h1>
                         <ol class="breadcrumb mb-4">
@@ -30,18 +30,21 @@
                             <li class="breadcrumb-item active">Export</li> --}}
                         </ol>
                         <div class="card mb-4">
-                            
+
                             <form action="{{ route('ESP.export') }}" method="GET" enctype="multipart/form-data">
                                 <button class="btn btn-danger float-end p-2" type="submit">Exporter les Etudiants</button>
-                                <select class="p-2 text-light bg-success float-center" name="annee" id="annee" required> 
+                                <select class="p-2 text-light bg-success float-center" name="annee" id="annee" required>
                                     <option value="" selected disabled>Specifie l'annee scolaire</option>
                                     <option value="2020-2021">2020-2021</option>
                                     <option value="2019-2020">2019-2020</option>
                                     <option value="2018-2019">2018-2019</option>
-                                    <option value="2017-2018">2017-2018</option> 
+                                    <option value="2017-2018">2017-2018</option>
                                 </select>
                                                             <select name="etat" id="etat" class="p-2 text-light bg-success " required>
                                                                 <option value="" selected disabled>Specifie l'etablisment</option>
+                                                                <option value="SupNum">SpNum</option>
+                                                                <option value="ESP">ESP</option>
+                                                                <option value="ISCAE">ISCAE</option>
                                                             @foreach ($etats as $etat=>$one )
                                                                 <option value="{{ $one->abrev}}">{{$one->abrev}}</option>
                                                             @endforeach
@@ -58,7 +61,7 @@
                                                                       </button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                      
+
                                                                         <div class="sb-sidenav-menu-heading">Etudiants</div>
                                                                      <input type="checkbox" name="etudiant[]" value="genre">
                                                                        genre
@@ -80,23 +83,23 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                       {{-- <button type="button" class="btn btn-secondary" >Close</button> --}}
-                                                                      <button type="button" class="btn btn-primary" class="save">Save changes</button>
+                                                                      <button type="button" class="btn btn-primary" class="save">Continuer l'export</button>
                                                                     </div>
                                                                   </div>
                                                                 </div>
-                                                              </div>               
+                                                              </div>
                             </form>
-                           
-  
- 
-  
+
+
+
+
                         </div>
-                        
+
                     </div>
                 </main>
-               
+
             <script>
-    
+
          function model(id_model){
 var modal = document.getElementById(id_model);
 
