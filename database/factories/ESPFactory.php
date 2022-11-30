@@ -22,7 +22,7 @@ class ESPFactory extends Factory
                 'N°_inscription'=> $this->faker->unique()->regexify('[I][4][0-9]{4}'),
                 'NNI'=> $this->faker->randomNumber(9, true),
                 'N°_de_BAC'=> $this->faker->randomNumber(5,true),
-                'Nom_et_prenom'=>$this->faker->name($gender = 'male'|'female') ,
+                'Nom_et_prenom'=>$this->faker->name($gender = ''|'male'|'female') ,
                 'GENRE' => $this->faker->randomElement(['M','F']),
                 'date_DE_NAISSANCE' => $this->faker->date('Y:m:d'),
                 'ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE'=>'2022-2023',
@@ -37,6 +37,8 @@ class ESPFactory extends Factory
                'etablissement_de_provenance'=>'',
                 'NATIONALITE'=>'MAURITANIE',
                 'LANGUE_DE_FORMATION'=>$this->faker->randomElement(['francais','francais','francais','arab']),
+                'annee_scolaire'=>'2020-2021'
+
             ];
         
     }

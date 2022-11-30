@@ -16,15 +16,15 @@ class Export implements FromCollection, WithHeadings
     public function __construct(array $data = [])
     {
         $name="App\Models\\".$data[0]['package'];
-        $this->data = app($name);; 
-    }
+        $this->data = app($name);
+       }
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
       
-        
+      
         return $this->data::select(
                             'N°_inscription',
                             'NNI',

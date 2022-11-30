@@ -14,15 +14,15 @@ use App\Http\Controllers\ESPController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index'); 
+
 
 Route::controller(all_studentsController::class)->group(function(){
-
+    Route::get('/', 'h')->name('index'); 
     Route::get('/etudiants', 'index')->name('etudiants'); 
 
     Route::get('/tables', 'tables')->name('tables');
+
+    Route::get('/layout-sidenav-light',  'tables_ex')->name('layout-sidenav-light');
    
 });
 
@@ -36,9 +36,7 @@ Route::controller(all_studentsController::class)->group(function(){
 })->name('charts');
 
 
-Route::get('/layout-sidenav-light', function () {
-    return view('layout-sidenav-light');
-})->name('layout-sidenav-light');
+
 
 Route::controller(ESPController::class)->group(function(){
     Route::get('ESP', 'index');
