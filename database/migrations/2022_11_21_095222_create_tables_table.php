@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('tutle');
             $table->string('co-tutle')->nullable();
+            $table->boolean('privee')->default(0);
             $table->string('nom-basedonne');
             $table->timestamps();
         });

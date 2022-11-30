@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('etablissement_de_provenance')->nullbale(true);
             $table->string('NATIONALITE');
             $table->string('LANGUE_DE_FORMATION');
+            $table->string('annee_scolaire');
             $table->timestamps();
         });
     }

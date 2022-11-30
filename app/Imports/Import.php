@@ -8,18 +8,30 @@ use Hash;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\ToCollection;
-class ESPImport implements WithHeadingRow,ToCollection
+class Import implements WithHeadingRow,ToCollection
 {
+
+
+
+
+    private $data; 
+
+    public function __construct(array $data = [])
+    {
+        if($data[0]['package']){
+        $name="App\Models\\".$data[0]['package'];
+        $this->data = app($name);}
+    }
     /**
     * @param array $row
     *
-    * @return \Illuminate\Database\Eloquent\Model|null
+    * @return \Illuminate\Database\Eloquent\Model|null|array|\view
     */
-    public function collection(Collection $data)
+    public function collection(Collection $dataa)
     {
         $arr = [];
 
-        foreach($data as $one){
+        foreach($dataa as $one){
             array_push($arr, array(
                 'N°_inscription'=>$one['n_inscription'],
                 'NNI'=>$one['nni'],
@@ -39,13 +51,16 @@ class ESPImport implements WithHeadingRow,ToCollection
                 'etablissement_de_provenance'    => $one['etablissement_de_provenance'],
                 'NATIONALITE'    => $one['nationalite'],
                 'LANGUE_DE_FORMATION'    => $one['langue_de_formation'],
+                'annee_scolaire'    => $one['annee_scolaire'],
             ));
         }
         if(!empty($arr)){
-            ESP::insert($arr);
+            // dd($this->data['package']);
+            $this->data::insert($arr);
         }
 
-
-        return $arr;
+ return $arr;
+        
     }
+
 }

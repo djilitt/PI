@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Exports\ESPExport;
-use App\Imports\ESPImport;
+use App\Exports\Export;
+use App\Imports\Import;
+
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\ESP;
 
@@ -13,19 +14,27 @@ class ESPController extends Controller
     /**
     * @return \Illuminate\Support\Collection
     */
-    public function index()
-    {
-        $ESPs = ESP::get();
+    // public function index()
+    // {
+    //     
 
-        return view('tables', compact('ESP'));
-    }
+        
+    // }
 
     /**
     * @return \Illuminate\Support\Collection
     */
     public function export()
     {
-        return Excel::download(new ESPExport, 'ESPs.xlsx');
+        $etats =DB::select('select abrev from tables ');
+
+        $data = [
+        [ 'package' => request()->get('etat')], 
+         ['etats'=>$etats]
+     ]; 
+     
+        $dataa= Excel::download(new Export($data), 'ESPs.xlsx');
+        return redirect('/tables')->with(['etat'=>$data[0]]);
     }
 
     /**
@@ -33,9 +42,18 @@ class ESPController extends Controller
     */
     public function import()
     {
-       $data = Excel::import(new ESPImport,request()->file('file'));
-    //    $row  = Excel::toArray($data);
-        return back();
+        $etats =DB::select('select abrev from tables ');
+
+        $data = [
+        [ 'package' => request()->get('etat')], 
+         ['etats'=>$etats]
+     ]; 
+
+
+     $name="App\Models\\".$data[0]['package'];
+       $dataa = Excel::import(new Import($data),request()->file('file'));
+    $arr= app($name)::select()->where('annee_scolaire',request()->get('annee'))->get();
+    return redirect('/tables')->with(['m'=>0,'etat'=>$data[0],'data'=>$arr]);
     }
 }
 
