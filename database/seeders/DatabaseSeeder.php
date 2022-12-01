@@ -28,12 +28,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-
-ISN::factory(234)->create();
-ISCAE::factory(643)->create();
-ESP::factory(742)->create();
-FST::factory(563)->create();
-
+tables::factory()->create();
 
     }
 }
