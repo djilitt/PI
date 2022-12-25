@@ -43,7 +43,8 @@ class Export implements FromCollection, WithHeadings
                             "année_universitaire_de_la_première_inscription_à_l'établissement",
                             "etablissement_de_provenance",
                             "NATIONALITE",
-                            "LANGUE_DE_FORMATION")->get();
+                            "LANGUE_DE_FORMATION",
+                            "annee_scolaire")->get();
     }
     /**
      * Write code on Method
@@ -69,7 +70,8 @@ class Export implements FromCollection, WithHeadings
         `année_universitaire_de_la_première_inscription_à_l'établissement`,
         `etablissement_de_provenance`,
         `NATIONALITE`,
-        `LANGUE_DE_FORMATION`];
+        `LANGUE_DE_FORMATION`,
+        `annee_scolaire`];
     }
 }
 

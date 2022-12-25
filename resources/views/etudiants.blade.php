@@ -78,5 +78,6 @@
                         </div> --}}
                     </div>
                 </main>
-              <script>var stat = @json($lists)</script>
+              <script>var stat = @json($lists) 
+              </script>
        @endsection

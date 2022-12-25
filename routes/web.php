@@ -22,7 +22,7 @@ Route::controller(all_studentsController::class)->group(function(){
 
     Route::get('/tables', 'tables')->name('tables');
 
-    Route::get('/layout-sidenav-light',  'tables_ex')->name('layout-sidenav-light');
+   
    
 });
 
@@ -40,7 +40,7 @@ Route::controller(all_studentsController::class)->group(function(){
 
 Route::controller(ESPController::class)->group(function(){
     Route::get('ESP', 'index');
-    Route::get('ESP-export', 'export')->name('ESP.export');
+    Route::get('layout-sidenav-light',  'tables_ex')->name('layout-sidenav-light');
     Route::post('ESP-import', 'import')->name('ESP.import');
 });
 

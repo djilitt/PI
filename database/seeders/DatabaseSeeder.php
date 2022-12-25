@@ -8,6 +8,7 @@ use App\Models\FST;
 use App\Models\ISCAE;
 
 use App\Models\ISN;
+use App\Models\SUPNUM;
 use App\Models\tables;
 use App\Models\_i_s_n;
 use Illuminate\Database\Seeder;
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-tables::factory()->create();
+
+        tables::factory()->create();
 
     }
 }

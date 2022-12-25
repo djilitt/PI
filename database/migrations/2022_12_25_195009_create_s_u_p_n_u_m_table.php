@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_f_s_ts', function (Blueprint $table) {
+        Schema::create('s_u_p_n_u_m_s', function (Blueprint $table) {
             $table->id();
             $table->string('N°_inscription',10);
             $table->string('NNI');
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_ce_niveau');
             $table->string('NOM_DU_(TRONC/FILIRERE)');
             $table->string('FORMATION');
-            $table->enum('Redoublant' ,['oui','non','']);
+            $table->enum('Redoublant' ,['oui','non',]);
             $table->enum('BOURSIER_OU_BENEFICIANTS_D\'AIDE',['oui','non']);
             $table->enum('TRANSFERE',['oui','non']);
             $table->string('année_universitaire_de_la_première_inscription_à_l\'établissement')->nullable(true);
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_f_s_ts');
+        Schema::dropIfExists('s_u_p_n_u_m_s');
     }
 };

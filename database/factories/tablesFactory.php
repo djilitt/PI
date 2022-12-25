@@ -17,12 +17,18 @@ class tablesFactory extends Factory
     public function definition()
     {
         return [
-           'abrev' => 'ESP',
-           'nom'=> 'Faculite de Science et Technique',
-           'tutle'=> 'Minister education superieur',
-           'co-tutle' => '',
-           'nom-basedonne'=>'i_s_c_a_e_s',
-           'privee'=>0
+ 
+        
+           
+                'abrev' => 'FST',
+                'nom'=> 'Faculite de Science et Technique',
+                'tutle'=> 'Ministère de l\'enseignement supérieur',
+                'co-tutle' => '',
+                'privee'=>0
+           
+          
+            
+                 
         ];
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ISN>
  */
-class ISNFactory extends Factory
+class SUPNUMFactory extends Factory
 {
     /**
      * Define the model's default state.
