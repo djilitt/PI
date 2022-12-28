@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        tables::factory()->create();
+        FST::factory(1243)->create();
 
     }
 }
